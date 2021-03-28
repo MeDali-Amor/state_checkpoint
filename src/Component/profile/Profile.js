@@ -10,7 +10,8 @@ class Profile extends Component {
             profession: "Full Stack Developer",
             imgSrc: "images/profilePic.jpg",
             show: false,
-            counter: 0,
+            // counter: 0,
+            date : new Date(0),
         }
         // this.handleClick = () =>{
         // this.setState({show: !this.state.show})
@@ -23,10 +24,20 @@ class Profile extends Component {
     //       date: new Date()
     //     });
     //   }
+    // componentDidMount() {
+    //     this.timerID = setInterval(
+    //         () => this.setState({ counter: this.state.counter + 1 }), 1000)
+    // }
+
     componentDidMount() {
         this.timerID = setInterval(
-            () => this.setState({ counter: this.state.counter + 1 }), 1000)
-    }
+          () => this.setState({
+            date: new Date(0)
+          }),
+          1000
+        );
+      }
+
     componentWillUnmount() {
         clearInterval(this.timerID)
     }
@@ -49,7 +60,7 @@ class Profile extends Component {
                 {/* : null
             } */}
                 {/* <button className="btn" onClick={this.handleClick}>{this.state.show ? "Hide Profile" : "Show Profile"}</button> */}
-                <p>{this.state.counter} seconds</p>
+                <h2>{this.state.date.toLocaleTimeString()}</h2>
             </div>
         )
     }
