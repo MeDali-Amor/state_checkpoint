@@ -11,7 +11,7 @@ class Profile extends Component {
             imgSrc: "images/profilePic.jpg",
             show: false,
             // counter: 0,
-            date : new Date(0),
+            date : new Date(),
         }
         // this.handleClick = () =>{
         // this.setState({show: !this.state.show})
@@ -32,7 +32,7 @@ class Profile extends Component {
     componentDidMount() {
         this.timerID = setInterval(
           () => this.setState({
-            date: new Date(0)
+            date: new Date()
           }),
           1000
         );
